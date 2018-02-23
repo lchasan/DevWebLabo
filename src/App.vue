@@ -25,10 +25,13 @@ export default {
   created: function () {
     getTasks().then((response) => {
     this.tasks = response;
-  })
-
+    })
+  },
+  updated: function () {
+    getTasks().then((response) => {
+      this.tasks = response;
+    })
   }
-
 
 };
 </script>
