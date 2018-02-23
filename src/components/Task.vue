@@ -1,16 +1,16 @@
 <template>
   <div class="task">
     <div class="content">
-      <input type='text' v-model="task.name" >
+      <textarea class="newName" v-model="task.name" title="name"></textarea>
     </div>
 
     <div class='extra content'>
-          <span class='right floated edit icon' v-on:click="edit()">
-          <i class='edit icon'>Edit</i>
+          <span class='edit' v-on:click="edit(task)">
+          <i class='edit'>Edit</i>
           </span>
 
-      <span class='right floated delete icon' v-on:click="deleteTask(task)">
-          <i class='delete icon'>Delete</i>
+      <span class='delete' v-on:click="deleteTask(task)">
+          <i class='delete'>Delete</i>
           </span>
     </div>
   </div>
@@ -24,6 +24,10 @@
     methods: {
       deleteTask(task) {
         this.$emit('delete-task', task);
+      },
+      edit(task) {
+        const ListName = document.getElementsByClassName("newName");
+        this.$emit('update-task',task, ListName);
       },
     }
   }
