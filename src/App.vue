@@ -27,10 +27,12 @@ export default {
     this.tasks = response;
     })
   },
-  updated: function () {
-    getTasks().then((response) => {
-      this.tasks = response;
-    })
+
+  methods:{
+    deleteTask(task) {
+      const todoIndex = this.tasks.indexOf(task);
+      deleteTask(task.id)
+    },
   }
 
 };

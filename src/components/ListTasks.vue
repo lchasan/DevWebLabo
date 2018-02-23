@@ -2,31 +2,33 @@
   <div class="body">
     <h1>My Tasks</h1>
     <div id="tasks">
-      <div class='ui centered card' v-for="task in tasks" :key="task.id">
-        <div class="content">
-          <div class="header">
-            {{task.name}}
-          </div>
-          <div class="extra content">
-            <span class="right floated edit icon">
-              <i class="edit icon"></i>
-            </span>
-          </div>
-        </div>
+
+        <task  v-on:delete-task="deleteTask" v-for="task in tasks" :key="task.id" v-bind:task="task"/>
 
       </div>
-
     </div>
-  </div>
+
 </template>
 
 <script>
-  import {getTasks} from "./api";
+import {deleteTask} from "./api";
+import Task from "./Task.vue";
 
-  export default {
-      name: "list-tasks",
-      props:['tasks'],
+export default {
+    name: "list-tasks",
+    props: ['tasks'],
+    components: {
+      Task,
+    },
 
+    methods: {
+      edit() {
+        console.log("Success")
+      },
+      deleteTask(task) {
+        deleteTask(task.id)
+      }
+    }
   }
 
 
