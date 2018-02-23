@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NewTask/>
+    <NewTask v-on:create-task="create"/>
     <ListTasks v-bind:tasks="tasks"/>
   </div>
 </template>
@@ -29,9 +29,10 @@ export default {
   },
 
   methods:{
-    deleteTask(task) {
-      const todoIndex = this.tasks.indexOf(task);
-      deleteTask(task.id)
+    create(name){
+      createTask(name).then((response) => {
+        this.tasks.push(response);
+      })
     },
   }
 

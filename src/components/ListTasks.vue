@@ -26,7 +26,8 @@ export default {
         console.log("Success")
       },
       deleteTask(task) {
-        deleteTask(task.id)
+        deleteTask(task.id);
+        this.tasks.splice(this.tasks.indexOf(task), 1)
       }
     }
   }

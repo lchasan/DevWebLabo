@@ -11,7 +11,6 @@
 </template>
 
 <script>
-  import {createTask} from "./api";
 
   export default {
     name: "new-task",
@@ -20,7 +19,8 @@
       create() {
         const textarea = document.getElementById('name');
         const name = textarea.value;
-        createTask(name)
+        this.$emit('create-task',name);
+        textarea.value = '';
       }
     }
   }
