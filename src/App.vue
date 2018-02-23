@@ -19,10 +19,14 @@ export default {
 
   data() {
     return {
-      tasks: getTasks()
+      tasks: []
     }
   },
   created: function () {
+    getTasks().then((response) => {
+    this.tasks = response;
+  })
+
   }
 
 
