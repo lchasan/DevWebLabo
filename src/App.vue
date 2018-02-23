@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <NewTask/>
+    <ListTasks v-bind:tasks="tasks"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import NewTask from './components/NewTask'
+import ListTasks from './components/ListTasks'
+import {getTasks,createTask,updateTask,deleteTask} from './components/api.js'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NewTask,
+    ListTasks
+  },
+
+  data() {
+    return {
+      tasks: getTasks()
+    }
+  },
+  created: function () {
   }
-}
+
+
+};
 </script>
 
 <style>

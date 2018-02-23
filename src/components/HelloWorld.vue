@@ -1,14 +1,6 @@
 <template>
   <div class="body">
 
-  <h1>New Task</h1>
-  <textarea id="name" placeholder="Enter task"></textarea>
-  <button type="button" id="save">Save</button>
-  <h1>My Tasks</h1>
-  <div id="tasks"></div>
-
-  <script type="module" src="./app.js"></script>
-
   </div>
 </template>
 
