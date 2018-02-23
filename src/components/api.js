@@ -3,10 +3,49 @@
 // Le fichier api.js comprend les méthodes CRUD pour communiquer avec l'API de taches fournies
 
 // On conserve l'id utilisateur dans une variable séparée pour facilement le changer
-const userId = '09504518-1a4f-4e86-aa1d-cbb76ded3d14'
+const userId = '11bb6e3c-a370-4819-b77c-1e15ee02db22'
+/*let userId;
+
+function userIDfct() {
+    let myRequest = new Request('https://glo3102lab4.herokuapp.com/users',
+        {method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+        })
+    fetch(myRequest)
+        .then(function(response) {
+            return response.json();
+        })
+
+        .then(function(data) {
+            //userId = data.id;
+            //console.log(userId);
+            //return userId;
+            console.log(data.id);
+            return data.id;
+        });
+}*/
+/*
+    return fetch(`https://glo3102lab4.herokuapp.com/users`, {
+        method: 'POST',
+    })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            userId = data.id;
+            console.log(userId);
+
+        });*/
+
+
+//userId = userIDfct();
+//console.log(userIDfct());
+//console.log(userId);
 
 // L'URL de base de l'api est stocké dans baseUrl
 const baseUrl = `https://glo3102lab4.herokuapp.com/${userId}`;
+
 
 // Implémentation de la méthode GET avec `fetch`
 // Permet de lister les tâches

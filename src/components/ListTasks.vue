@@ -22,15 +22,14 @@ export default {
     },
 
     methods: {
-      edit() {
-        console.log("Success")
-      },
-      deleteTask(task) {
-        deleteTask(task.id);
-        this.tasks.splice(this.tasks.indexOf(task), 1)
-      }
+        deleteTask(task) {
+            deleteTask(task.id);
+            this.tasks.splice(this.tasks.indexOf(task), 1);
+        }
     }
-  }
+}
+
+
 
 
 </script>
