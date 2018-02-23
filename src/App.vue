@@ -8,7 +8,7 @@
 <script>
 import NewTask from './components/NewTask'
 import ListTasks from './components/ListTasks'
-import {getTasks,createTask,updateTask,deleteTask} from './components/api.js'
+import {getTasks,createTask} from './components/api.js'
 
 export default {
   name: 'App',
